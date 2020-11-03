@@ -481,9 +481,9 @@ class GoogleDriveHelper:
                     content += f'<b> | <a href="https://telegra.ph/{self.path[nxt_page]}">Next</a></b>'
                     nxt_page += 1
             Telegraph(access_token=telegraph_token).edit_page(path = self.path[prev_page],
-                                 title = 'Mirror Bot Search',
-                                 author_name='Mirror Bot',
-                                 author_url='https://github.com/magneto261290/magneto-python-aria',
+                                 title = 'Torrent Seedbox | Search Results',
+                                 author_name='Torrent 2 G-Drive Bots',
+                                 author_url='https://t.me/Torrent_Seedbox',
                                  html_content=content)
         return
 
@@ -556,9 +556,9 @@ class GoogleDriveHelper:
 
             for content in self.telegraph_content :
                 self.path.append(Telegraph(access_token=telegraph_token).create_page(
-                                                        title = 'Mirror Bot Search',
-                                                        author_name='Mirror Bot',
-                                                        author_url='https://github.com/magneto261290/magneto-python-aria',
+                                                        title = 'Torrent Seedbox | Search Results',
+                                                        author_name='Torrent 2 G-Drive Bots',
+                                                        author_url='https://t.me/Torrent_Seedbox',
                                                         html_content=content
                                                         )['path'])
 
@@ -566,7 +566,7 @@ class GoogleDriveHelper:
             if self.num_of_path > 1:
                 self.edit_telegraph()
 
-            msg = f"<b>Search Results For {fileName} 👇</b>"
+            msg = f"Search Results For <b>{fileName} ⬇️</b>"
             buttons = button_build.ButtonMaker()   
             buttons.buildbutton("HERE", f"https://telegra.ph/{self.path[0]}")
 

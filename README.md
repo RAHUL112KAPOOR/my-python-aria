@@ -125,7 +125,7 @@ STEP 4
 ## Deploying
 CLICK DEPLOY BUTTON ON YOUR FORKED REPO. THATS IT !
 ```
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+[![Deploy]https://heroku.com/deploy?template=https://github.com/theaterplus/magneto-python-aria
 
 
 # How to deploy? Legacy Method

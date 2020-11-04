@@ -23,7 +23,7 @@ class MirrorStatus:
 
 
 PROGRESS_MAX_SIZE = 100 // 8
-PROGRESS_INCOMPLETE = ['▣', '▣', '▣', '▣', '▣', '▣', '▣']
+PROGRESS_INCOMPLETE = ['■', '■', '■', '■', '■', '■', '■']
 
 SIZE_UNITS = ['B', 'KB', 'MB', 'GB', 'TB', 'PB']
 
@@ -93,7 +93,7 @@ def get_readable_message():
         msg = ""
         for download in list(download_dict.values()):
             msg += f"<b>📁 Name :</b> <code>{download.name()}</code>"
-            msg += f"\n<b>🧲 Status :</b> <i>{download.status()}</i>"
+            msg += f"\n<b>🤖 Status :</b> <i>{download.status()}</i>"
             if download.status() != MirrorStatus.STATUS_ARCHIVING and download.status() != MirrorStatus.STATUS_EXTRACTING:
                 msg += f"\n<code>{get_progress_bar_string(download)} {download.progress()}</code>" \
                        f"\n<b>✅ Downloaded :</b> {get_readable_file_size(download.processed_bytes())} of {download.size()}" \
@@ -105,7 +105,7 @@ def get_readable_message():
                 except:
                     pass
             if download.status() == MirrorStatus.STATUS_DOWNLOADING:
-                msg += f"\n<code>/cancel1 {download.gid()}</code>"
+                msg += f"\n<code>/cancelmega {download.gid()}</code>"
             msg += "\n\n"
         return msg
 

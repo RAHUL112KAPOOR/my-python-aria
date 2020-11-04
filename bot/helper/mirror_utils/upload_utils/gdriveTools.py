@@ -481,9 +481,9 @@ class GoogleDriveHelper:
                     content += f'<b> | <a href="https://telegra.ph/{self.path[nxt_page]}">Next</a></b>'
                     nxt_page += 1
             Telegraph(access_token=telegraph_token).edit_page(path = self.path[prev_page],
-                                 title = 'Torrent Seedbox | Search Results',
+                                 title = 'Torrent Seedbox | Search Area',
                                  author_name='Torrent Seedbox',
-                                 author_url='https://t.me/joinchat/AAAAAE17iykvO4VS983TiA',
+                                 author_url='https://t.me/Torrent_Seedbox',
                                  html_content=content)
         return
 
@@ -508,12 +508,12 @@ class GoogleDriveHelper:
 
         content_count = 0
         if response["files"]:
-            msg += f'<h4>Results : {fileName}</h4><br><br>'
+            msg += f'<h4>Search Results for : {fileName}</h4><br><br>'
 
             for file in response.get('files', []):
                 if file.get('mimeType') == "application/vnd.google-apps.folder":  # Detect Whether Current Entity is a Folder or File.
                     furl = f"https://drive.google.com/drive/folders/{file.get('id')}"
-                    msg += f"⁍<code>{file.get('name')}<br>(folder📁)</code><br>"
+                    msg += f"⁍<code>{file.get('name')}<br>(folder🗂️)</code><br>"
                     if SHORTENER is not None and SHORTENER_API is not None:
                         sfurl = requests.get('https://{}/api?api={}&url={}&format=text'.format(SHORTENER, SHORTENER_API, furl)).text
                         msg += f"<b><a href={sfurl}>G-Drive Link</a></b>"
@@ -528,12 +528,12 @@ class GoogleDriveHelper:
                             msg += f' <b>| <a href="{url}">Index Link</a></b>'
                 else:
                     furl = f"https://drive.google.com/uc?id={file.get('id')}&export=download"
-                    msg += f"⁍<code>{file.get('name')}<br>({get_readable_file_size(int(file.get('size')))})📄</code><br>"
+                    msg += f"⁍<code>{file.get('name')}<br>({get_readable_file_size(int(file.get('size')))})📁</code><br>"
                     if SHORTENER is not None and SHORTENER_API is not None:
                         sfurl = requests.get('https://{}/api?api={}&url={}&format=text'.format(SHORTENER, SHORTENER_API, furl)).text
-                        msg += f"<b><a href={sfurl}>Drive Link</a></b>"
+                        msg += f"<b><a href={sfurl}>G-Drive Link</a></b>"
                     else:
-                        msg += f"<b><a href={furl}>Drive Link</a></b>"
+                        msg += f"<b><a href={furl}>G-Drive Link</a></b>"
                     if INDEX_URL is not None:
                         url = requests.utils.requote_uri(f'{INDEX_URL}/{file.get("name")}')
                         if SHORTENER is not None and SHORTENER_API is not None:
@@ -556,9 +556,9 @@ class GoogleDriveHelper:
 
             for content in self.telegraph_content :
                 self.path.append(Telegraph(access_token=telegraph_token).create_page(
-                                                        title = 'Torrent Seedbox | Search Results',
+                                                        title = 'Torrent Seedbox | Search Area',
                                                         author_name='Torrent Seedbox',
-                                                        author_url='https://t.me/joinchat/AAAAAE17iykvO4VS983TiA',
+                                                        author_url='https://t.me/Torrent_Seedbox',
                                                         html_content=content
                                                         )['path'])
 

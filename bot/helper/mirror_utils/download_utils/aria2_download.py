@@ -26,7 +26,7 @@ class AriaDownloadHelper(DownloadHelper):
         smsg, button = gdrive.drive_list(sname)
         if STOP_DUPLICATE_MIRROR:
             if smsg:
-                dl.getListener().onDownloadError(f'😬<code>File is already available in G-Drive. You should have search before mirroring any file.</code> <b>You might get ban if you do this again.</b> <code>This download has been stopped 🚧.</code>\n\n <b>Here are the Search Results :</b> ⬇️ \n\n{smsg}')
+                dl.getListener().onDownloadError(f'😬<code>File is already available in G-Drive. You should have search before mirroring any file.</code> <b>You might get ban if you do this again.</b> <code>This download has been stopped 🚧.</code>\n\n <b>Here are the Search Results:</b> ⬇️ \n\n{smsg}')
                 aria2.remove([download])
             return
         update_all_messages()

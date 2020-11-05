@@ -26,9 +26,9 @@ class AriaDownloadHelper(DownloadHelper):
         smsg, button = gdrive.drive_list(sname)
         if STOP_DUPLICATE_MIRROR:
             if smsg:
-                dl.getListener().onDownloadError(f'The File you are trying to Mirror/Download is already in our G-Drive 😬.\n\n')
+                dl.getListener().onDownloadError(f'The File you are trying to Mirror/Download is already in our Google Drive 😬.\n\n')
                 print(dl.getListener())
-                sendMarkup(" Here is your Download link: ⬇️", dl.getListener().bot, dl.getListener().update, button)
+                sendMarkup(" Here is your Download link : ⬇️", dl.getListener().bot, dl.getListener().update, button)
                 aria2.remove([download])
             return
         update_all_messages()

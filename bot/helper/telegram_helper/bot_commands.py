@@ -12,7 +12,7 @@ class _BotCommands:
         self.UnAuthorizeCommand = 'unauthorizemega'
         self.PingCommand = 'pingmega'
         self.RestartCommand = 'restartmega'
-        self.StatsCommand = 'statsmega'
+        self.StatsCommand = 'stats'
         self.HelpCommand = 'helpmega'
         self.LogCommand = 'logmega'
         self.CloneCommand = "clonemega"

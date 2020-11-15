@@ -125,7 +125,7 @@ STEP 4
 ## Deploying
 CLICK DEPLOY BUTTON ON YOUR FORKED REPO. THATS IT !
 ```
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/rahul12kapoor/my-python-aria)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/theaterplus/my-python-aria)
 
 
 # How to deploy? Legacy Method
